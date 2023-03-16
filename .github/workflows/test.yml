@@ -16,3 +16,5 @@ jobs:
           cache: true
       - name: Test
         run: go test -v ./...
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
