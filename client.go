@@ -21,7 +21,7 @@ type Client struct {
 	config     Config
 }
 
-func NewClient(config Config, httpClient *http.Client) *Client {
+func NewClient(httpClient *http.Client, config Config) *Client {
 	return &Client{
 		httpClient: httpClient,
 		baseURL:    baseURL,

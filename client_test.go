@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	testClient = NewClient(Config{
+	testClient = NewClient(http.DefaultClient, Config{
 		APIKey: os.Getenv("OPENAI_API_KEY"),
-	}, http.DefaultClient)
+	})
 )
