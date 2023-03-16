@@ -29,16 +29,6 @@ func NewClient(httpClient *http.Client, config Config) *Client {
 	}
 }
 
-func (c *Client) CreateChatCompletion(ctx context.Context, req CreateChatCompletionsRequest) (CreateChatCompletionsResponse, error) {
-	var resp CreateChatCompletionsResponse
-
-	if err := c.doAPI(ctx, http.MethodPost, "/v1/chat/completions", req, &resp); err != nil {
-		return CreateChatCompletionsResponse{}, err
-	}
-
-	return resp, nil
-}
-
 func (c *Client) doAPI(ctx context.Context, method string, pathname string, params any, respBody any) error {
 	u, err := c.baseURL.Parse(pathname)
 	if err != nil {

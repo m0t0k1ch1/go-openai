@@ -1,5 +1,9 @@
 package openai
 
+type ErrorResponse struct {
+	Error Error `json:"error"`
+}
+
 type Error struct {
 	Message string     `json:"message"`
 	Type    string     `json:"type"`
